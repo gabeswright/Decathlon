@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/calculatorFragment"
+    tools:context="com.example.gabewright.decathlon.CalculatorFragment">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/et100"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/etlj"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/etsp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/ethj"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/et400"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/et110h"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/etdiscus"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/etpv"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/etjav"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/et1500"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/tvsubmit"/>
+
+
+</LinearLayout>
