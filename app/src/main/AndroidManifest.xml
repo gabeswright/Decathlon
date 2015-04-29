@@ -20,6 +20,10 @@
             android:name=".EventDetails"
             android:label="@string/title_activity_event_details" >
         </activity>
+        <activity
+            android:name=".CalculatorResult"
+            android:label="@string/title_activity_calculator_result" >
+        </activity>
     </application>
 
 </manifest>
