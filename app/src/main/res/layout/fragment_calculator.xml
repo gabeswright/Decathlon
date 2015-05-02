@@ -70,11 +70,24 @@
         android:layout_gravity="center"
         android:id="@+id/et1500"/>
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/etdate"
+        android:layout_gravity="center"
+        />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:id="@+id/tvsubmit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:id="@+id/tvsave"/>
 
 
 </LinearLayout>
