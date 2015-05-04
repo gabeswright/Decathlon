@@ -19,6 +19,25 @@ import io.realm.RealmResults;
  */
 public class CalculatorFragment extends Fragment {
 
+    private String title;
+    private int page;
+
+    public static RecyclerViewFragmentEvents newInstance(int page, String title) {
+        RecyclerViewFragmentEvents fragmentFirst = new RecyclerViewFragmentEvents();
+        Bundle args = new Bundle();
+        args.putInt("Int", page);
+        args.putString("Title", title);
+        fragmentFirst.setArguments(args);
+        return fragmentFirst;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        page = getArguments().getInt("2", 1);
+        title = getArguments().getString("Calculator");
+    }
+
     EditText one;
     EditText sp;
     EditText lj;

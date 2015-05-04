@@ -3,7 +3,7 @@ package com.example.gabewright.decathlon;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,6 +20,25 @@ import java.util.List;
 public class RecyclerViewFragmentEvents extends Fragment {
 
     private RecyclerView recyclerEvents;
+
+    private String title;
+    private int page;
+
+    public static RecyclerViewFragmentEvents newInstance(int page, String title) {
+        RecyclerViewFragmentEvents eventsFrag = new RecyclerViewFragmentEvents();
+        Bundle args = new Bundle();
+        args.putInt("An Int", page);
+        args.putString("A String", title);
+        eventsFrag.setArguments(args);
+        return eventsFrag;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        page = getArguments().getInt("1", 0);
+        title = getArguments().getString("Events");
+    }
 
     public RecyclerViewFragmentEvents() {
         // Required empty public constructor
