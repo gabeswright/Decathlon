@@ -50,7 +50,7 @@ public class RecyclerViewFragmentEvents extends Fragment {
         Drawable trackfoot = res.getDrawable(R.drawable.trackfoot);
 
         List<Event> events = new ArrayList<>();
-        events.add(new Event("100 Meter Dash", trackfoot, difoot,"Run fast","fast hands","faster","faster","finish!"));
+        events.add(new Event("100 Meter Dash", trackfoot, difoot,"1: The first event of the decathlon","2: You are allowed 1 false start, you are disqualified on the second","3: Staying low on your start allows for faster acceleration","4: Every tenth of a second is apporox. 20 points ","5: Run the race as if it were 103 meters - don't break stride at the finish line"));
         events.add(new Event("Long Jump", trackfoot, difoot,"","","","",""));
         events.add(new Event("Shot Put", trackfoot, difoot,"","","","",""));
         events.add(new Event("High Jump", trackfoot, difoot,"","","","",""));
