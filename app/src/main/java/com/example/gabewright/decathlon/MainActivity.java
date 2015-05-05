@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //getFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecyclerViewFragmentEvents())
-        //       .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
+          //     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         vpPager.setAdapter(adapterViewPager);
@@ -50,8 +50,27 @@ public class MainActivity extends FragmentActivity {
                     return SavedResults.newInstance(2, "Results");
                 default:
                     return null;
-        }
-    }
+                }
 
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+
+            String events = "Events";
+            String calc = "Calculator";
+            String results = "Results";
+
+            switch (position) {
+                case 0:
+                    return events;
+                case 1:
+                    return calc;
+                case 2:
+                    return results;
+                default:
+                    return null;
+            }
+        }
     }
 }

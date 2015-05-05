@@ -34,7 +34,7 @@ public class CalculatorFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        page = getArguments().getInt("2", 1);
+        page = getArguments().getInt("String", 0);
         title = getArguments().getString("Calculator");
     }
 
