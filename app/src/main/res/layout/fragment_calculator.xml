@@ -8,85 +8,102 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="100 Meter Dash (s)"
+        android:gravity="center"
         android:id="@+id/et100"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="Long Jump (m)"
+        android:gravity="center"
         android:id="@+id/etlj"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="Shot Put (m)"
+        android:gravity="center"
         android:id="@+id/etsp"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_gravity="center"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="High Jump (m)"
+        android:gravity="center"
         android:id="@+id/ethj"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="400 Meter Dash (s)"
+        android:gravity="center"
         android:id="@+id/et400"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:hint="110 Meter Hurdles (s)"
+        android:gravity="center"
         android:id="@+id/et110h"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Discus (m)"
         android:id="@+id/etdiscus"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Pole Vault (m)"
         android:id="@+id/etpv"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Javelin (m)"
         android:id="@+id/etjav"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="1500 Meter Run (s)"
         android:id="@+id/et1500"/>
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:id="@+id/etdate"
+        android:gravity="center"
         android:layout_gravity="center"
+        android:hint="Date (If you want to save)"
         />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/tvsubmit"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/tvsave"/>
 
