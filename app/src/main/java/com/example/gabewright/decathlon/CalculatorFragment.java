@@ -71,8 +71,6 @@ public class CalculatorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mapViews(view);
 
-        realm = realm.getInstance(getActivity());
-
         submit.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -91,16 +89,27 @@ public class CalculatorFragment extends Fragment {
 
     private void saveScores(){
 
-        double onetime = Double.parseDouble(one.getText().toString());
-        double spd = Double.parseDouble(sp.getText().toString());
-        double ljd = Double.parseDouble(lj.getText().toString());
-        double hjh = Double.parseDouble(hj.getText().toString());
-        double fourtime = Double.parseDouble(four.getText().toString());
-        double hurdletime = Double.parseDouble(hurdles.getText().toString());
-        double discd = Double.parseDouble(discus.getText().toString());
-        double pvh = Double.parseDouble(pv.getText().toString());
-        double javd = Double.parseDouble(jav.getText().toString());
-        double fifteentime = Double.parseDouble(fifteen.getText().toString());
+        double onetime = 0;
+        onetime = Double.parseDouble(one.getText().toString());
+        double spd = 0;
+        spd = Double.parseDouble(sp.getText().toString());
+        double ljd = 0;
+        ljd = Double.parseDouble(lj.getText().toString());
+        double hjh = 0;
+        hjh = Double.parseDouble(hj.getText().toString());
+        double fourtime = 0;
+        fourtime = Double.parseDouble(four.getText().toString());
+        double hurdletime = 0;
+        hurdletime = Double.parseDouble(hurdles.getText().toString());
+        double discd = 0;
+        discd = Double.parseDouble(discus.getText().toString());
+        double pvh = 0;
+        pvh = Double.parseDouble(pv.getText().toString());
+        double javd = 0;
+        javd = Double.parseDouble(jav.getText().toString());
+        double fifteentime = 0;
+        fifteentime = Double.parseDouble(fifteen.getText().toString());
+
         String dates = date.getText().toString();
 
         int onescore;
@@ -115,26 +124,48 @@ public class CalculatorFragment extends Fragment {
         int javscore;
         int totalscore;
 
-        onescore = (int) Math.pow((25.437*(18-onetime)),1.81);
-        fourscore = (int) Math.pow((1.53775*(82-fourtime)),1.81);
-        fifteenscore = (int) Math.pow((.03768*(480-fifteentime)),1.85);
-        hurdlescore = (int) Math.pow((5.74352*(28.5-hurdletime)),1.92);
-        spscore = (int) Math.pow((51.39*(spd-1.5)),1.05);
-        ljscore = (int) Math.pow((.14354*(ljd-2.2)),1.4);
-        hjscore = (int) Math.pow((.8465*(hjh-.75)),1.42);
-        pvscore = (int) Math.pow((.2797*(pvh-1)),1.35);
-        discusscore = (int) Math.pow((12.91*(discd-4)),1.1);
-        javscore = (int) Math.pow((10.14*(javd-7)),1.08);
+        if (onetime==0){onescore=0;}
+        else{onescore = (int) (25.437*Math.pow((18-onetime),1.81));}
+
+        if (fourtime==0){fourscore=0;}
+        else{fourscore = (int) (1.53775*Math.pow((82-fourtime),1.81));}
+
+        if (fifteentime==0){fifteenscore=0;}
+        else{fifteenscore = (int) (.03768*Math.pow((480-fifteentime),1.85));}
+
+        if (hurdletime==0){hurdlescore=0;}
+        else {hurdlescore = (int) (5.74352*Math.pow((28.5-hurdletime),1.92));}
+
+        if (spd==0){spscore=0;}
+        else{spscore = (int) (51.39*(Math.pow((spd-1.5),1.05)));}
+
+        ljd = ljd*100;
+        if(ljd==0){ljscore=0;}
+        else {ljscore = (int) (.14354*Math.pow((ljd-220),1.4));}
+
+        hjh=hjh*100;
+        if (hjh==0){hjscore=0;}
+        else{hjscore = (int) (.8465*Math.pow(hjh-75,1.42));}
+
+        pvh=pvh*100;
+        if (pvh==0){pvscore=0;}
+        else{pvscore = (int) (.2797*Math.pow((pvh-100),1.35));}
+
+        if (discd==0){discusscore=0;}
+        else{discusscore = (int) (12.91*Math.pow((discd-4),1.1));}
+
+        if (javd==0){javscore=0;}
+        else{javscore = (int) (10.14*Math.pow((javd-7),1.08));}
 
         totalscore = onescore + fourscore + fifteenscore +hurdlescore + spscore + ljscore + hjscore + pvscore + discusscore + javscore;
+        String score = Integer.toString(totalscore);
 
-        String yourscore = Integer.toString(totalscore);
-
+        realm = realm.getInstance(getActivity());
         realm.beginTransaction();
 
-        RealmScore score = realm.createObject(RealmScore.class);
-        score.setScore(yourscore);
-        score.setDate(dates);
+        RealmScore realmScore = realm.createObject(RealmScore.class);
+        realmScore.setScore(score);
+        realmScore.setDate(dates);
         realm.commitTransaction();
 
     }
@@ -210,7 +241,6 @@ public class CalculatorFragment extends Fragment {
 
         totalscore = onescore + fourscore + fifteenscore +hurdlescore + spscore + ljscore + hjscore + pvscore + discusscore + javscore;
         String score = Integer.toString(totalscore);
-        //String score = onescore +"," + fourscore +"," + fifteenscore +"," +hurdlescore+"," + spscore+"," + ljscore+"," + hjscore+"," + pvscore+"," + discusscore+"," + javscore;
         intent.putExtra("score", score);
         startActivity(intent);
 

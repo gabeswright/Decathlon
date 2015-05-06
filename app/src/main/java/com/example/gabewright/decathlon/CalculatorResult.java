@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import io.realm.RealmResults;
+
 
 public class CalculatorResult extends ActionBarActivity {
 
@@ -17,5 +19,6 @@ public class CalculatorResult extends ActionBarActivity {
 
         scoreis = (TextView) findViewById(R.id.tvscore);
         scoreis.setText(getIntent().getStringExtra("score"));
+
     }
 }

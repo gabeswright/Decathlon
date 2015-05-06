@@ -69,9 +69,9 @@ public class RecyclerViewFragmentEvents extends Fragment {
         Drawable trackfoot = res.getDrawable(R.drawable.trackfoot);
 
         List<Event> events = new ArrayList<>();
-        events.add(new Event("100 Meter Dash", trackfoot, difoot,"1: The first event of the decathlon","2: You are allowed 1 false start, you are disqualified on the second","3: Staying low on your start allows for faster acceleration","4: Every tenth of a second is apporox. 20 points ","5: Run the race as if it were 103 meters - don't break stride at the finish line"));
-        events.add(new Event("Long Jump", trackfoot, difoot,"","","","",""));
-        events.add(new Event("Shot Put", trackfoot, difoot,"","","","",""));
+        events.add(new Event("100 Meter Dash", trackfoot, difoot,"1: The first event of the decathlon","2: Athletes are allowed 1 false start, they are disqualified on the second","3: Staying low on the start allows for faster acceleration","4: Every tenth of a second is approx. 20 points ","5: Run the race as if it were 103 meters - don't break stride at the finish line"));
+        events.add(new Event("Long Jump", trackfoot, difoot,"1: The decathlon's second event","2: Athletes are given three attempts to jump as far as you can","3: If any part of the athlete's foot is over the board, it's a scratch","4: The jump is measured from the furthest back mark in the sand","5: Athletes must exit the pit beyond said furthest back mark"));
+        events.add(new Event("Shot Put", trackfoot, difoot,"1: The decathlon's third event","2: Athletes are given three throws","3: Athletes must exit out of the back of the ring","4: Athletes must exit the ring under control","5: A shot put weighs 16 pounds"));
         events.add(new Event("High Jump", trackfoot, difoot,"","","","",""));
         events.add(new Event("400 Meter Dash", trackfoot, difoot,"","","","",""));
         events.add(new Event("110 Hurdles", trackfoot, difoot,"","","","",""));
