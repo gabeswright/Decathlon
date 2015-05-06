@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 
 /**
@@ -19,18 +20,8 @@ public class SavedResults extends Fragment {
 
     private String title;
     private int page;
-    private Realm realm;
 
-    TextView lastScore;
-    TextView lastDate;
-    TextView twoScore;
-    TextView twoDate;
-    TextView threeScore;
-    TextView threeDate;
-    TextView fourScore;
-    TextView fourDate;
-    TextView fiveScore;
-    TextView fiveDate;
+    TextView pastScores;
 
 
 
@@ -58,9 +49,16 @@ public class SavedResults extends Fragment {
     }
 
     @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        pastScores = (TextView) view.findViewById(R.id.pastScores);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        
+        String value = getArguments().getString("Saved");
+        pastScores.setText(value);
     }
 }
