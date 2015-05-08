@@ -4,6 +4,7 @@ package com.example.gabewright.decathlon;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -162,26 +163,23 @@ public class CalculatorFragment extends Fragment {
         totalscore = onescore + fourscore + fifteenscore +hurdlescore + spscore + ljscore + hjscore + pvscore + discusscore + javscore;
         String score = Integer.toString(totalscore);
 
-//        realm = realm.getInstance(getActivity());
-//        realm.beginTransaction();
-//
-//        RealmScore realmScore = realm.createObject(RealmScore.class);
-//        realmScore.setScore(score);
-//        realmScore.setDate(dates);
-//        realm.commitTransaction();
-//        realmResults = realm.where(RealmScore.class).findAll();
-//
-//        String pastScores = "";
-//        for(int i=0;i<realmResults.size();i++){
-//            pastScores = pastScores + realmResults.get(i).getScore() + " on " + realmResults.get(i).getDate() + "/n";
-//        }
-//
-//        SavedResults savedResults = new SavedResults();
-//        Bundle bundle = new Bundle();
-//        bundle.putString("Saved", pastScores);
-//        savedResults.setArguments(bundle);
+        realm = Realm.getInstance(getActivity());
+        realm.beginTransaction();
 
+        RealmScore realmScore = realm.createObject(RealmScore.class);
+        realmScore.setScore(score);
+        realmScore.setDate(dates);
+        realm.commitTransaction();
+        realmResults = realm.where(RealmScore.class).findAll();
 
+        String pastScores = "";
+        for(int i=0;i<realmResults.size();i++){
+            pastScores = pastScores + realmResults.get(i).getScore() + " on " + realmResults.get(i).getDate() + "\n";
+        }
+
+        Intent intent = new Intent(getActivity(), ResultsActivity.class);
+        intent.putExtra("Results", pastScores);
+        startActivity(intent);
     }
 
 

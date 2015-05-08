@@ -24,6 +24,10 @@
             android:name=".CalculatorResult"
             android:label="@string/title_activity_calculator_result" >
         </activity>
+        <activity
+            android:name=".ResultsActivity"
+            android:label="@string/title_activity_results" >
+        </activity>
     </application>
 
 </manifest>

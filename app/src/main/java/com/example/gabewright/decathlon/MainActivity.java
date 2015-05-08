@@ -27,7 +27,7 @@ public class MainActivity extends FragmentActivity {
     }
 
     public static class MyPagerAdapter extends FragmentPagerAdapter {
-        private static int NUM_ITEMS = 3;
+        private static int NUM_ITEMS = 2;
 
         public MyPagerAdapter(android.support.v4.app.FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -46,8 +46,7 @@ public class MainActivity extends FragmentActivity {
                     return RecyclerViewFragmentEvents.newInstance(0, "Events");
                 case 1:
                     return CalculatorFragment.newInstance(1, "Calculator");
-                case 2:
-                    return SavedResults.newInstance(2, "Results");
+
                 default:
                     return null;
                 }
@@ -66,8 +65,6 @@ public class MainActivity extends FragmentActivity {
                     return events;
                 case 1:
                     return calc;
-                case 2:
-                    return results;
                 default:
                     return null;
             }
