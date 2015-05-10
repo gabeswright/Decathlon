@@ -17,6 +17,7 @@ public class CalculatorResult extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_result);
 
+
         scoreis = (TextView) findViewById(R.id.tvscore);
         scoreis.setText(getIntent().getStringExtra("score"));
 

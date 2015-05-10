@@ -13,6 +13,7 @@ public class ResultsActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //shows the saved results
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
         results = (TextView) findViewById(R.id.results);

@@ -24,6 +24,7 @@ public class EventDetails extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
+        //maps views
         name = (TextView) findViewById(R.id.eventName);
         tip1 = (TextView) findViewById(R.id.tip1);
         tip2 = (TextView) findViewById(R.id.tip2);
@@ -34,6 +35,7 @@ public class EventDetails extends ActionBarActivity {
 
         Resources res = getResources();
 
+        //sets text
         name.setText(getIntent().getStringExtra("name"));
         tip1.setText(getIntent().getStringExtra("tip1"));
         tip2.setText(getIntent().getStringExtra("tip2"));
@@ -41,6 +43,7 @@ public class EventDetails extends ActionBarActivity {
         tip4.setText(getIntent().getStringExtra("tip4"));
         tip5.setText(getIntent().getStringExtra("tip5"));
 
+        //sets image
         int picint = Integer.parseInt(getIntent().getStringExtra("picint"));
         pic.setImageDrawable(res.getDrawable(picint));
 

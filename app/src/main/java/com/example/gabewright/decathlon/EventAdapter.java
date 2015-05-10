@@ -26,6 +26,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         final ViewHolder viewHolder = new ViewHolder(view, new ViewHolder.ItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+
+                //Sets up an intent which passes along event info when one of the items in the recycler view is clicked
                 Intent intent = new Intent(parent.getContext(), EventDetails.class);
                 String name = events.get(position).getName();
                 String picint = Integer.toString(events.get(position).getPicint());
@@ -61,8 +63,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-
-
         ItemClickListener listener;
         TextView tvName;
         ImageView ivPic;
@@ -71,6 +71,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             super(itemView);
             this.listener = listener;
 
+            //maps views and sets on click listeners
             tvName = (TextView) itemView.findViewById(R.id.tv_name);
             ivPic = (ImageView) itemView.findViewById(R.id.iv_pic);
             tvName.setOnClickListener(this);

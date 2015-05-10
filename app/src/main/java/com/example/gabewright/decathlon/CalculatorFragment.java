@@ -55,6 +55,7 @@ public class CalculatorFragment extends Fragment {
     TextView save;
     TextView submit;
     TextView viewSaved;
+    TextView clear;
     private Realm realm;
 
 
@@ -94,6 +95,13 @@ public class CalculatorFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 viewSaved();
+            }
+        });
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearSaved();
             }
         });
     }
@@ -206,7 +214,7 @@ public class CalculatorFragment extends Fragment {
 
         String pastScores = "";
         for(int i=0;i<realmResults.size();i++){
-            pastScores = pastScores + realmResults.get(i).getScore() + " on " + realmResults.get(i).getDate() + "\n";
+            pastScores = pastScores + realmResults.get(i).getScore() + " at " + realmResults.get(i).getDate() + "\n";
         }
 
         Intent intent = new Intent(getActivity(), ResultsActivity.class);
@@ -332,6 +340,8 @@ public class CalculatorFragment extends Fragment {
         save.setText("Save");
         viewSaved = (TextView) view.findViewById(R.id.tvviewsaved);
         viewSaved.setText("View Saved");
+        clear = (TextView) view.findViewById(R.id.tvclear);
+        clear.setText("Clear Saved");
     }
 
     private void viewSaved(){
@@ -347,6 +357,16 @@ public class CalculatorFragment extends Fragment {
         Intent intent = new Intent(getActivity(), ResultsActivity.class);
         intent.putExtra("Results", pastScores);
         startActivity(intent);
+
+    }
+
+    private void clearSaved(){
+        //clears list of saved scores
+        realm = Realm.getInstance(getActivity());
+        realmResults = realm.where(RealmScore.class).findAll();
+        realm.beginTransaction();
+        realm.clear(RealmScore.class);
+        realm.commitTransaction();
 
     }
 }

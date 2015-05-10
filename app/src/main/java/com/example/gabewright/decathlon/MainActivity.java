@@ -37,6 +37,7 @@ public class MainActivity extends FragmentActivity {
             return NUM_ITEMS;
         }
 
+        //creates the fragments
         @Override
         public Fragment getItem(int position) {
             switch (position) {
@@ -54,6 +55,7 @@ public class MainActivity extends FragmentActivity {
         @Override
         public CharSequence getPageTitle(int position) {
 
+            //sets the headers
             String events = "Events";
             String calc = "Calculator";
 
