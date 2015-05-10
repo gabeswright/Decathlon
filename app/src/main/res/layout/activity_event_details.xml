@@ -19,14 +19,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"
+        android:textColor="@color/primary_material_light"
         android:id="@+id/eventName"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"
+        android:textColor="@color/primary_material_light"
         android:id="@+id/tip1"/>
     <TextView
         android:id="@+id/tip2"
@@ -34,27 +34,27 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"/>
+        android:textColor="@color/primary_material_light"/>
     <TextView
         android:id="@+id/tip3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"/>
+        android:textColor="@color/primary_material_light"/>
     <TextView
         android:id="@+id/tip4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"/>
+        android:textColor="@color/primary_material_light"/>
     <TextView
         android:id="@+id/tip5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:textSize="16dp"
-        android:textColor="@color/bright_foreground_disabled_material_light"/>
+        android:textColor="@color/primary_material_light"/>
 
 </LinearLayout>

@@ -54,6 +54,7 @@ public class CalculatorFragment extends Fragment {
     EditText date;
     TextView save;
     TextView submit;
+    TextView viewSaved;
     private Realm realm;
 
 
@@ -88,30 +89,57 @@ public class CalculatorFragment extends Fragment {
 
             }
         });
+
+        viewSaved.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewSaved();
+            }
+        });
     }
 
     private void saveScores(){
 
+        //this chunk of code checks if the edit text was left black, then converts the edit text into a double
         double onetime = 0;
-        onetime = Double.parseDouble(one.getText().toString());
+        if(one.getText().toString().matches("")){onetime = 0;}
+        else{onetime = Double.parseDouble(one.getText().toString());}
+
         double spd = 0;
-        spd = Double.parseDouble(sp.getText().toString());
+        if(sp.getText().toString().matches("")){spd=0;}
+        else{spd = Double.parseDouble(sp.getText().toString());}
+
         double ljd = 0;
-        ljd = Double.parseDouble(lj.getText().toString());
+        if(lj.getText().toString().matches("")){ljd=0;}
+        else{ljd = Double.parseDouble(lj.getText().toString());}
+
         double hjh = 0;
-        hjh = Double.parseDouble(hj.getText().toString());
+        if(hj.getText().toString().matches("")){hjh=0;}
+        else{hjh = Double.parseDouble(hj.getText().toString());}
+
         double fourtime = 0;
-        fourtime = Double.parseDouble(four.getText().toString());
+        if(four.getText().toString().matches("")){fourtime=0;}
+        else{fourtime = Double.parseDouble(four.getText().toString());}
+
         double hurdletime = 0;
-        hurdletime = Double.parseDouble(hurdles.getText().toString());
+        if(hurdles.getText().toString().matches("")){hurdletime=0;}
+        else{hurdletime = Double.parseDouble(hurdles.getText().toString());}
+
         double discd = 0;
-        discd = Double.parseDouble(discus.getText().toString());
+        if(discus.getText().toString().matches("")){discd=0;}
+        else{discd = Double.parseDouble(discus.getText().toString());}
+
         double pvh = 0;
-        pvh = Double.parseDouble(pv.getText().toString());
+        if(pv.getText().toString().matches("")){pvh=0;}
+        else{pvh = Double.parseDouble(pv.getText().toString());}
+
         double javd = 0;
-        javd = Double.parseDouble(jav.getText().toString());
+        if(jav.getText().toString().matches("")){javd=0;}
+        else{javd = Double.parseDouble(jav.getText().toString());}
+
         double fifteentime = 0;
-        fifteentime = Double.parseDouble(fifteen.getText().toString());
+        if(fifteen.getText().toString().matches("")){fifteentime=0;}
+        else{fifteentime = Double.parseDouble(fifteen.getText().toString());}
 
         String dates = date.getText().toString();
 
@@ -127,6 +155,7 @@ public class CalculatorFragment extends Fragment {
         int javscore;
         int totalscore;
 
+        //calculates the scores and converts them to ints
         if (onetime==0){onescore=0;}
         else{onescore = (int) (25.437*Math.pow((18-onetime),1.81));}
 
@@ -163,6 +192,7 @@ public class CalculatorFragment extends Fragment {
         totalscore = onescore + fourscore + fifteenscore +hurdlescore + spscore + ljscore + hjscore + pvscore + discusscore + javscore;
         String score = Integer.toString(totalscore);
 
+        //saves the total score and string to realm
         realm = Realm.getInstance(getActivity());
         realm.beginTransaction();
 
@@ -171,6 +201,8 @@ public class CalculatorFragment extends Fragment {
         realmScore.setDate(dates);
         realm.commitTransaction();
         realmResults = realm.where(RealmScore.class).findAll();
+
+        //formats a nice string to be passed into the next activity
 
         String pastScores = "";
         for(int i=0;i<realmResults.size();i++){
@@ -186,26 +218,46 @@ public class CalculatorFragment extends Fragment {
     private void calculateScores() {
         Intent intent = new Intent(getActivity(), CalculatorResult.class);
 
+        //this chunk of code checks if the edit text was left black, then converts the edit text into a double
         double onetime = 0;
-        onetime = Double.parseDouble(one.getText().toString());
+        if(one.getText().toString().matches("")){onetime = 0;}
+        else{onetime = Double.parseDouble(one.getText().toString());}
+
         double spd = 0;
-        spd = Double.parseDouble(sp.getText().toString());
+        if(sp.getText().toString().matches("")){spd=0;}
+        else{spd = Double.parseDouble(sp.getText().toString());}
+
         double ljd = 0;
-        ljd = Double.parseDouble(lj.getText().toString());
+        if(lj.getText().toString().matches("")){ljd=0;}
+        else{ljd = Double.parseDouble(lj.getText().toString());}
+
         double hjh = 0;
-        hjh = Double.parseDouble(hj.getText().toString());
+        if(hj.getText().toString().matches("")){hjh=0;}
+        else{hjh = Double.parseDouble(hj.getText().toString());}
+
         double fourtime = 0;
-        fourtime = Double.parseDouble(four.getText().toString());
+        if(four.getText().toString().matches("")){fourtime=0;}
+        else{fourtime = Double.parseDouble(four.getText().toString());}
+
         double hurdletime = 0;
-        hurdletime = Double.parseDouble(hurdles.getText().toString());
+        if(hurdles.getText().toString().matches("")){hurdletime=0;}
+        else{hurdletime = Double.parseDouble(hurdles.getText().toString());}
+
         double discd = 0;
-        discd = Double.parseDouble(discus.getText().toString());
+        if(discus.getText().toString().matches("")){discd=0;}
+        else{discd = Double.parseDouble(discus.getText().toString());}
+
         double pvh = 0;
-        pvh = Double.parseDouble(pv.getText().toString());
+        if(pv.getText().toString().matches("")){pvh=0;}
+        else{pvh = Double.parseDouble(pv.getText().toString());}
+
         double javd = 0;
-        javd = Double.parseDouble(jav.getText().toString());
+        if(jav.getText().toString().matches("")){javd=0;}
+        else{javd = Double.parseDouble(jav.getText().toString());}
+
         double fifteentime = 0;
-        fifteentime = Double.parseDouble(fifteen.getText().toString());
+        if(fifteen.getText().toString().matches("")){fifteentime=0;}
+        else{fifteentime = Double.parseDouble(fifteen.getText().toString());}
 
         int onescore;
         int fourscore;
@@ -219,6 +271,7 @@ public class CalculatorFragment extends Fragment {
         int javscore;
         int totalscore;
 
+        //this code calculates the scores and converts the points to an int value
         if (onetime==0){onescore=0;}
         else{onescore = (int) (25.437*Math.pow((18-onetime),1.81));}
 
@@ -251,6 +304,8 @@ public class CalculatorFragment extends Fragment {
 
         if (javd==0){javscore=0;}
         else{javscore = (int) (10.14*Math.pow((javd-7),1.08));}
+
+        //calculates total score and passes it to the next activity
 
         totalscore = onescore + fourscore + fifteenscore +hurdlescore + spscore + ljscore + hjscore + pvscore + discusscore + javscore;
         String score = Integer.toString(totalscore);
@@ -275,5 +330,23 @@ public class CalculatorFragment extends Fragment {
         date = (EditText) view.findViewById(R.id.etdate);
         save = (TextView) view.findViewById(R.id.tvsave);
         save.setText("Save");
+        viewSaved = (TextView) view.findViewById(R.id.tvviewsaved);
+        viewSaved.setText("View Saved");
+    }
+
+    private void viewSaved(){
+        //allows user to view previously saved data
+        realm = Realm.getInstance(getActivity());
+        realmResults = realm.where(RealmScore.class).findAll();
+
+        String pastScores = "";
+        for(int i=0;i<realmResults.size();i++){
+            pastScores = pastScores + realmResults.get(i).getScore() + " on " + realmResults.get(i).getDate() + "\n";
+        }
+
+        Intent intent = new Intent(getActivity(), ResultsActivity.class);
+        intent.putExtra("Results", pastScores);
+        startActivity(intent);
+
     }
 }

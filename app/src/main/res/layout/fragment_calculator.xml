@@ -92,7 +92,7 @@
         android:id="@+id/etdate"
         android:gravity="center"
         android:layout_gravity="center"
-        android:hint="Date (If you want to save)"
+        android:hint="Meet Info (If you want to save)"
         />
 
     <TextView
@@ -106,6 +106,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:id="@+id/tvsave"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/tvviewsaved"/>
 
 
 </LinearLayout>
